@@ -38,28 +38,29 @@ bool is_open(char ch) {
 bool is_close(char ch) {
   return CLOSE.find(ch) != string::npos;
 }
+stack<char> s;
 ```
 Now lets follow the steps in the algorithm from the book.  We push the next character on the stack if it is an open and pop one off if it is a close character.  Notice that the find() function for strings returns the offset into the string where the character was found, so if the offset in the OPEN string is the same as the offset in the CLOSE string, then they matched.
 ```c++
-  stack<char> s;
-  bool balanced = true;
-  for (string::const_iterator iter = expression.begin();
-   balanced && (iter != expression.end();
-   iter++) {
-    char next_ch = *iter;
-    if (is_open(next_ch)) {
-      s.push(next_ch);
-    } else if (is_close(next_ch)) {
-      if (s.empty()) {
-        balanced = false;
-      } else {
-        char top_ch = s.top();
-        s.pop();
-        balanced = 
-          OPEN.find(top_ch) == CLOSE.find(next_ch);
-      }
+    stack<char> s;
+    bool balanced = true;
+    for (string::const_iterator iter = expression.begin();
+     balanced && (iter != expression.end());
+     iter++) {
+        char next_ch = *iter;
+        if (is_open(next_ch)) {
+            s.push(next_ch);
+        } else if (is_close(next_ch)) {
+            if (s.empty()) {
+                balanced = false;
+            } else {
+                char top_ch = s.top();
+                s.pop();
+                balanced = 
+                 OPEN.find(top_ch) == CLOSE.find(next_ch);
+            }
+        }
     }
-  }
-  return balanced && s.empty();
+    return balanced && s.empty();
   ```
   Test your function to make sure it works and you are finished with the first part of the lab.

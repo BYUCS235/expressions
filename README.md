@@ -59,7 +59,6 @@ Now lets follow the steps in the algorithm from the book.  We push the next char
           OPEN.find(top_ch) == CLOSE.find(next_ch);
       }
     }
-    ++iter;
   }
   return balanced && s.empty();
   ```

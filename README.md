@@ -1,5 +1,5 @@
 # expressions
-In this learning activity, we will write a function to determine if an expression is balanced.  The book talks about the problem and proposes an algorithm for the function isBalanced(). 
+In this learning activity, we will write a function to determine if an expression is balanced.  The following algorithm can be used for the function isBalanced(). 
 
 1. Create an empty stack of characters.
 2. Assume that the expression is balanced (balanced is true).

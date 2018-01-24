@@ -8,7 +8,7 @@ For this learning activity, we will implement this algorithm.
 Create an empty stack of characters.
 Assume that the expression is balanced (balanced is true).
 Set index to 0.
-  while balanced is true and index < the expression’s length
+while balanced is true and index < the expression’s length
     Get the next character in the data string.
     if the next character is an opening parenthesis
       Push it onto the stack.
